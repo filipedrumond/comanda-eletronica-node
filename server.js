@@ -11,11 +11,12 @@ const HOST = '0.0.0.0';
 const app = express();
 
 app.use('/build', express.static('html/build'));
+app.use('/assets', express.static('html/assets'));
 
 /* NO ROUTES HERE TRATAMENTO PARA O VUE GERENCIAR MAS CUIDADO FUTURO PARA CASO DE POSTS OU TRATAMENTO DE FOTOS ETC */
 app.use('*', routes);
 
 app.listen(PORT, HOST);
 
-console.log(`Running on http://${HOST}:${PORT}`);
-console.log(`Running on docker -> http://${HOST}:${505}`);
+console.log(`Running on \x1b[33mhttp://${HOST}:${PORT}\x1b[0m`);
+console.log(`Or on \x1b[34mdocker\x1b[0m -> \x1b[33mhttp://${HOST}:${505}\x1b[0m`);

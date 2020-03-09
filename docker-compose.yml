@@ -1,12 +1,12 @@
 version: '3'
 services:
-    node_docker:
+    comanda-eletronica-node:
       build: 
           context: .
           dockerfile: Dockerfile
-      container_name: node_docker
+      container_name: comanda-eletronica-node
       ports:
-          - "505:80"
+          - "500:80"
       volumes:
           - .:/usr/src/app/
       environment:

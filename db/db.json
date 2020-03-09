@@ -1,0 +1,31 @@
+{
+    "pratos": [
+        {}
+    ],
+    "categorias": [
+        {
+            "id": 1,
+            "categoria": "Prato Principal"
+        },
+        {
+            "id": 2,
+            "categoria": "Entrada"
+        },
+        {
+            "id": 3,
+            "categoria": "Bebida"
+        },
+        {
+            "id": 4,
+            "categoria": "Bebida Alcoolica"
+        },
+        {
+            "id": 5,
+            "categoria": "Tira Gosto"
+        },
+        {
+            "id": 6,
+            "categoria": "Doce"
+        }
+    ]
+}

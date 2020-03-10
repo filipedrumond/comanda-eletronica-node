@@ -1,14 +1,18 @@
-const path = require('path')
+const dbServer = _  => {
 
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router(path.join(__dirname, 'db/db.json'))
-const middlewares = jsonServer.defaults()
+  const path = require('path')
+  
+  const jsonServer = require('json-server')
+  const server = jsonServer.create()
+  const router = jsonServer.router(path.join(__dirname, 'db/db.json'))
+  const middlewares = jsonServer.defaults()
+  
+  server.use(middlewares)
+  server.use(router)
 
-server.use(middlewares)
-server.use(router)
-
-const port = 80
-server.listen(port, _ => {
-  console.log('JSON Server is running on ', port)
-})
+  const port = 510
+  return server.listen(port, _ => {
+    console.log('JSON Server is running on ', port)
+  })
+}
+module.exports =  dbServer;

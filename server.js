@@ -2,6 +2,7 @@
 
 const express = require('express');
 var routes = require('./routes');
+const dbServer = require('./server.db');
 
 // Constants
 const PORT = 80;
@@ -20,3 +21,4 @@ app.listen(PORT, HOST);
 
 console.log(`Running on \x1b[33mhttp://${HOST}:${PORT}\x1b[0m`);
 console.log(`Or on \x1b[34mdocker\x1b[0m -> \x1b[33mhttp://${HOST}:${505}\x1b[0m`);
+dbServer();

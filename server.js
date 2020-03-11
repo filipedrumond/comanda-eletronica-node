@@ -1,12 +1,13 @@
 'use strict';
 
+require('dotenv').config()
 const express = require('express');
 var routes = require('./routes');
-const dbServer = require('./server.db');
+require('./server.db')(process.env.DB_PORT);
 
 // Constants
-const PORT = 80;
-const HOST = '0.0.0.0';
+const PORT = process.env.APLICATION_PORT;
+const HOST = process.env.APLICATION_HOST;
 
 // App
 const app = express();
@@ -21,4 +22,3 @@ app.listen(PORT, HOST);
 
 console.log(`Running on \x1b[33mhttp://${HOST}:${PORT}\x1b[0m`);
 console.log(`Or on \x1b[34mdocker\x1b[0m -> \x1b[33mhttp://${HOST}:${505}\x1b[0m`);
-dbServer();

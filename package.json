@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "css-loader": "^3.2.0",
+    "dotenv": "^8.2.0",
     "express": "^4.16.1",
     "jquery": "^3.4.1",
     "json-server": "^0.16.1",

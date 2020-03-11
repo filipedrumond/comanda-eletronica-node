@@ -2,9 +2,9 @@
     <div class="">
         <h1>I'M here</h1>
         {{ pratos }}
-        <teste />
-        <teste />
-        <teste />
+        <teste v-for="prato in pratos2" v-bind:key="prato.id" :prato="prato">
+        </teste>
+        {{ pratos2 }}
     </div>
 </template>
 
@@ -15,14 +15,21 @@ export default {
     name: "home",
     data() {
         return {
-            pratos: []
+            pratos: [],
+            pratos2: []
         };
     },
     created: function() {
-        console.log(this.$http.get("http://localhost:510/categorias"));
-        this.$http.get("http://localhost:510/categorias").then(response => {
-            this.pratos = response.body;
-        });
+        console.log("G");
+        this.$http
+            .get("http://localhost:510/categorias")
+            .then(response => {
+                this.pratos = response.body;
+                return this.$http.get("http://localhost:510/categorias");
+            })
+            .then(response => {
+                this.pratos2 = response.body;
+            });
     },
     components: { teste }
 };

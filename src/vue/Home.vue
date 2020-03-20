@@ -5,11 +5,14 @@
         <teste v-for="prato in pratos2" v-bind:key="prato.id" :prato="prato">
         </teste>
         {{ pratos2 }}
+        <counter/>
+        <counter/>
     </div>
 </template>
 
 <script>
 import teste from "./components/Teste";
+import counter from "./components/Counter";
 // var component = require("./components/Component")
 export default {
     name: "home",
@@ -20,7 +23,6 @@ export default {
         };
     },
     created: function() {
-        console.log("G");
         this.$http
             .get("http://localhost:510/categorias")
             .then(response => {
@@ -31,7 +33,7 @@ export default {
                 this.pratos2 = response.body;
             });
     },
-    components: { teste }
+    components: { teste, counter }
 };
 </script>
 
